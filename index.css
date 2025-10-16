@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #edf2f4, #dfe7ec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #2b2d42;
+  padding: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  perspective: 1500px;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  perspective: 1000px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  flex: 1 1 300px;
+  max-width: 340px;
+  min-width: 280px;
+}
+.card .more {
+  display: none;
+}
+.card .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.6s ease;
+}
+.card .content .front,
+.card .content .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.card .content .front {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .content .front .inner {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+}
+.card .content .front .inner h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+.card .content .front .inner .rating {
+  margin-bottom: 1rem;
+}
+.card .content .front .inner .rating i {
+  color: #f7d11e;
+  margin: 0 2px;
+}
+.card .content .front .inner .button {
+  background: #fff;
+  color: #2b2d42;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.card .content .front .inner .button:hover {
+  background: #8d99ae;
+  color: #fff;
+}
+.card .content .back {
+  background: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.card .content .back .inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card .content .back .inner .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.card .content .back .inner .info span:first-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  color: #2b2d42;
+}
+.card .content .back .inner .info .icon {
+  display: flex;
+  align-items: center;
+  color: #8d99ae;
+}
+.card .content .back .inner .info .icon i {
+  margin-right: 5px;
+}
+.card .content .back .inner .description {
+  flex: 1;
+  overflow-y: auto;
+  margin: 1rem 0;
+  padding-right: 0.5rem;
+}
+.card .content .back .inner .description p, .card .content .back .inner .description li {
+  color: rgb(111.1846153846, 126.3230769231, 152.8153846154);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.card .content .back .inner .description ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+.card .content .back .inner .description::-webkit-scrollbar {
+  width: 6px;
+}
+.card .content .back .inner .description::-webkit-scrollbar-thumb {
+  background: rgb(185.7230769231, 193.0153846154, 205.7769230769);
+  border-radius: 4px;
+}
+.card .content .back .inner .location {
+  font-weight: 600;
+  color: #2b2d42;
+}
+.card .content .back .inner .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  color: #2b2d42;
+}
+.card .content .back .inner .button.return {
+  align-self: flex-start;
+  background: #8d99ae;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card .content .back .inner .button.return:hover {
+  background: rgb(111.1846153846, 126.3230769231, 152.8153846154);
+}
+.card .content .back .inner .button.return i {
+  font-size: 1rem;
+}
+.card .more:checked ~ .content {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+    height: 400px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
